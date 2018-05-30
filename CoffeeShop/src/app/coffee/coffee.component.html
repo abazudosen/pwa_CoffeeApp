@@ -1,0 +1,87 @@
+<div class="example-container">
+
+  <mat-card>
+    <mat-card-title>
+      Basic Coffee Information
+    </mat-card-title>
+    <mat-form-field>
+      <input matInput placeholder="Coffee Name" name="name" [(ngModel)]="coffee.name">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Coffee Type" name="type" [(ngModel)]="coffee.type">
+        <mat-option *ngFor="let type of types" [value]="type">{{ type }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>
+      Place Information
+    </mat-card-title>
+    <mat-form-field>
+      <input matInput placeholder="Place Name" name="place" [(ngModel)]="coffee.place">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Address" name="address" [(ngModel)]="coffee.location.address">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="City" name="city" [(ngModel)]="coffee.location.city">
+    </mat-form-field>
+
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>
+      Ratings
+    </mat-card-title>
+
+    <mat-card-subtitle>Overall Ratings</mat-card-subtitle>
+    
+    <mat-slider [(ngModel)]="coffee.rating" min="1" max="10" s="1" thumbLabel name="rating"></mat-slider>
+
+    <mat-card-subtitle>
+      <mat-slide-toggle #tastingSelector [checked]="tastingEnabled" color="primary" (change)="tastingRatingChanged(tastingSelector.checked)">
+        Tasting Rating
+      </mat-slide-toggle>
+    </mat-card-subtitle>
+
+
+    <section id="tasting" *ngIf="tastingSelector.checked">
+      <label>Aroma</label>
+      <mat-slider [(ngModel)]="coffee.tastingRating.aroma" min="1" max="10" step="1" thumbLabel name="aromaRating"></mat-slider>
+
+      <label>Flavor</label>
+      <mat-slider [(ngModel)]="coffee.tastingRating.flavor" min="1" max="10" step="1" thumbLabel name="flavorRating"></mat-slider>
+
+      <label>Intensity</label>
+      <mat-slider [(ngModel)]="coffee.tastingRating.intensity" min="1" max="10" step="1" thumbLabel name="intenstyRating"></mat-slider>
+
+      <label>Sweetness</label>
+      <mat-slider [(ngModel)]="coffee.tastingRating.sweetness" min="1" max="10" step="1" thumbLabel name="sweetnessRating"></mat-slider>
+
+      <label>AfterTaste</label>
+      <mat-slider [(ngModel)]="coffee.tastingRating.aftertaste" min="1" max="10" step="1" thumbLabel name="aftertasteRating"></mat-slider>
+
+    </section>
+
+  </mat-card>
+
+  <mat-card>
+    <mat-form-field>
+      <textarea matInput placeholder="Notes" name="notes" [(ngModel)]="coffee.notes"></textarea>
+    </mat-form-field>
+  </mat-card>
+
+  <mat-card>
+    <button mat-raised-button (click)="cancel()">Cancel</button>
+    <button mat-raised-button color="primary" (click)="save()">Save</button>
+  </mat-card>
+
+</div>
+
+
+<!-- Copyright 2018 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

@@ -1,0 +1,43 @@
+{
+    "name": "my coffee App - my cool coffee app",
+    "start_url": "/",
+    "orientation": "any",
+    "scope": "/",
+    "display": "standalone",
+
+    "short_name": "coffeeShop",
+    "theme-color": "#472D21",
+    "background-color": "#C0B764",
+    "icons": [
+        {
+            "src": "/icons/espresso_16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/espresso_24.png",
+            "sizes": "24x24",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/espresso_32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/espresso_64.png",
+            "sizes": "64x64",
+            "type": "image/png" 
+        },
+        {
+            "src": "/icons/espresso_128.png",
+            "sizes": "128x128",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/espresso_144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        }
+    ]
+}
